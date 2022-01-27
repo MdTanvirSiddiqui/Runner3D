@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,6 @@ public class CollectableObjController : MonoBehaviour
     void Start()
     {
         playerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerManager>();
-        friend = GameObject.FindGameObjectWithTag("CollectableObj").GetComponent<FriendController>();
     }
 
     // Update is called once per frame
@@ -42,5 +42,35 @@ public class CollectableObjController : MonoBehaviour
                 collision.gameObject.AddComponent<CollectableObjController>();
             }
         }
+        if(collision.gameObject.tag == "Obstacle")
+        {
+            Dead();
+        }
     }
+
+    private void Dead()
+    {
+        Destroy(gameObject);
+    }
+
+
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "CollectableList")
+        {
+            other.transform.GetComponent<BoxCollider>().enabled = false;
+            other.transform.parent = playerManager.collectedPoolTransform;
+
+            foreach (Transform child in other.transform)
+            {
+                if (playerManager.collidedList.Contains(child.gameObject))
+                {
+                    playerManager.collidedList.Add(child.gameObject);
+                    child.gameObject.tag = "CollectedObj";
+                    child.gameObject.AddComponent<CollectableObjController>();
+                }
+            }
+        }
+    }*/
 }

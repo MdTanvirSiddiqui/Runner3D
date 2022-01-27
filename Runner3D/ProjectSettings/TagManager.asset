@@ -8,6 +8,8 @@ TagManager:
   - GameManager
   - CollectableObj
   - CollectedObj
+  - CollectableList
+  - Obstacle
   layers:
   - Default
   - TransparentFX

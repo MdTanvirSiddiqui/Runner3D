@@ -38,7 +38,7 @@ public class FriendController : MonoBehaviour
                 anim.SetBool("TurnRight", false);
                 anim.SetBool("TurnLeft", true);
             }
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6f, 6f), transform.position.y, transform.position.z);
+           // transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
         else
         {

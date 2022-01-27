@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
 
             transform.position += transform.forward * movementSpeed * Time.deltaTime;
             transform.position += transform.right * posX * horizontalSpeed * Time.deltaTime;
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8f, 8f),0,transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5f, 6f), transform.position.y, transform.position.z);
         }
         else
         {
