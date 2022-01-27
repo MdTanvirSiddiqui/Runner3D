@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour
     [SerializeField] PlayerManager playerManager;
     [SerializeField] float movementSpeed;
     [SerializeField] float horizontalSpeed;
-    [SerializeField] bool inArea;
     public float posX;
 
     public Animator playerAnim;
@@ -28,9 +27,9 @@ public class Movement : MonoBehaviour
 
     private void GetInput()
     {
-        if (Input.anyKey)
+        if (Input.GetButton("Horizontal"))
         {
-            posX = Mathf.Clamp( Input.GetAxis("Horizontal"),-8f,8f);
+            posX = Input.GetAxis("Horizontal");
             if (posX > 0)
             {
                 playerAnim.SetBool("TurnLeft", false);
@@ -42,12 +41,9 @@ public class Movement : MonoBehaviour
                 playerAnim.SetBool("TurnLeft", true);
             }
 
-            Debug.Log("Player position: " + transform.position.x);
-            Debug.Log("Is Player in area: " + inArea);
-           
-               // transform.position += transform.forward * movementSpeed * Time.deltaTime;
-                transform.position += transform.right * posX * horizontalSpeed * Time.deltaTime;
-                transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8f, 8f),movementSpeed*Time.deltaTime,0);
+            transform.position += transform.forward * movementSpeed * Time.deltaTime;
+            transform.position += transform.right * posX * horizontalSpeed * Time.deltaTime;
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8f, 8f),0,transform.position.z);
         }
         else
         {
