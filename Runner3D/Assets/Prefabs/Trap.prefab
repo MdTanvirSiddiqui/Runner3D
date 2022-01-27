@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6682194802108881825}
   - component: {fileID: 818461988177814285}
   - component: {fileID: 9467252559873436}
+  - component: {fileID: 4865171075261331588}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Obstacle
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 28d8b7600ed9d42069e565487057e971, type: 2}
+  - {fileID: 2100000, guid: 522f587c22c5ee74ab55b258687f629b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,3 +98,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4865171075261331588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270473883948376523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adac0542c530a145b25ee271b7af53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

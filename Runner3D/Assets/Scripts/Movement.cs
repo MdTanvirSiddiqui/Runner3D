@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float movementSpeed;
     [SerializeField] float horizontalSpeed;
     public float posX;
-
+    public bool startGame;
     public Animator playerAnim;
 
     // Start is called before the first frame update
@@ -21,7 +21,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        if (startGame)
+        {
+            GetInput();
+        }
+        
     }
  
 
@@ -43,7 +47,7 @@ public class Movement : MonoBehaviour
 
             transform.position += transform.forward * movementSpeed * Time.deltaTime;
             transform.position += transform.right * posX * horizontalSpeed * Time.deltaTime;
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5f, 6f), transform.position.y, transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6.5f, 6f), transform.position.y, transform.position.z);
         }
         else
         {
