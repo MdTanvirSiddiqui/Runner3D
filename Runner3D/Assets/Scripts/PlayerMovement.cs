@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] PlayerManager playerManager;
+    public Movement movement;
     private Rigidbody rb;
     [SerializeField] bool isGrounded;
     public Animator playerAnim;
@@ -23,6 +24,13 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             Grounded();
+        }
+
+        if(collision.gameObject.tag == "FinishLine")
+        {
+            collision.gameObject.SetActive(false);
+            movement.startGame = false;
+
         }
     }
 

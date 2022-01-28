@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.tag=="Player")
         {
-            Debug.Log("Game Over!");
+            GameManager.instance.GameOver();
         }
     }
 }
