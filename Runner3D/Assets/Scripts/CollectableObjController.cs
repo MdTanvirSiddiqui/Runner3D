@@ -48,6 +48,8 @@ public class CollectableObjController : MonoBehaviour
         if(collision.gameObject.tag == "Obstacle")
         {
             Dead();
+            GameObject particle = Instantiate(playerManager.particlePrefab,transform.position,Quaternion.identity);
+            Destroy(particle, 1);
         }
     }
 
