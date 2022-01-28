@@ -12,11 +12,6 @@ public class Movement : MonoBehaviour
     public bool startGame;
     public Animator playerAnim;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,7 +42,7 @@ public class Movement : MonoBehaviour
 
             transform.position += transform.forward * movementSpeed * Time.deltaTime;
             transform.position += transform.right * posX * horizontalSpeed * Time.deltaTime;
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6.5f, 6f), transform.position.y, transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9f, 9.5f), transform.position.y, transform.position.z);
         }
         else
         {

@@ -18,12 +18,6 @@ public class PlayerMovement : MonoBehaviour
         playerManager.collidedList.Add(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")

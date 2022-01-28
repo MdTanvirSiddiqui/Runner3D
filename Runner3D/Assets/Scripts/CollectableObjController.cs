@@ -23,9 +23,12 @@ public class CollectableObjController : MonoBehaviour
             Rigidbody rb = GetComponent<Rigidbody>();
 
             rb.useGravity = false;
-            rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+            
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
             GetComponentInChildren<SkinnedMeshRenderer>().material = playerManager.collectedCharacterMaterial;
         }
+  
     }
 
     private void OnCollisionEnter(Collision collision)
