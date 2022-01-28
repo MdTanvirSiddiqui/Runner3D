@@ -11,6 +11,7 @@ TagManager:
   - CollectableList
   - Obstacle
   - FinishLine
+  - ProgressBar
   layers:
   - Default
   - TransparentFX

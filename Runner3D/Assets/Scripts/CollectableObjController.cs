@@ -51,6 +51,22 @@ public class CollectableObjController : MonoBehaviour
             GameObject particle = Instantiate(playerManager.particlePrefab,transform.position,Quaternion.identity);
             Destroy(particle, 1);
         }
+        if (collision.gameObject.tag == "ProgressBar")
+        {
+            collision.gameObject.SetActive(false);
+            GameProgress.instance.IncrementProgress(13);
+            Debug.Log("Progress Bar from OnCollider");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ProgressBar"))
+        {
+            other.gameObject.SetActive(false);
+            GameProgress.instance.IncrementProgress(13);
+            Debug.Log("Progress Bar from OnTrigger");
+        }
     }
 
     private void Dead()
