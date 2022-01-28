@@ -11,18 +11,30 @@ public class Movement : MonoBehaviour
     public float posX;
     public bool startGame;
     public Animator playerAnim;
+    public static Movement instance;
 
-
+    private void Start()
+    {
+        instance = this;
+    }
     // Update is called once per frame
     void Update()
     {
+        if (playerAnim ==null)
+        {
+            playerAnim = GameObject.FindGameObjectWithTag("CollectableObj").GetComponent<Animator>();
+        }
         if (startGame)
         {
             GetInput();
         }
-        
+        else
+        {
+            playerAnim.SetBool("TurnLeft", false);
+            playerAnim.SetBool("TurnRight", false);
+        }      
     }
- 
+
 
     private void GetInput()
     {

@@ -355,6 +355,7 @@
 "Assets/Scripts/FollowPlayer.cs"
 "Assets/Scripts/FriendController.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/GameOver.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/PlayerManager.cs"

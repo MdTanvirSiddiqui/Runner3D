@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.tag=="Player")
         {
             GameManager.instance.GameOver();
+            Movement.instance.startGame = false;
         }
     }
 }

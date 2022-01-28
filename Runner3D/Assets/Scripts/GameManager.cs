@@ -22,10 +22,9 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        progressBar.SetActive(true);
-        congratulationPanel.SetActive(false);
         gameOverPanel.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        progressBar.SetActive(false);
+        congratulationPanel.SetActive(false);
     }
 
     public void Congratulation()
@@ -38,5 +37,10 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         progressBar.SetActive(false);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

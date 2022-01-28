@@ -25,13 +25,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Grounded();
         }
-
-        if(collision.gameObject.tag == "FinishLine")
-        {
-            collision.gameObject.SetActive(false);
-            movement.startGame = false;
-
-        }
     }
 
     private void Grounded()
