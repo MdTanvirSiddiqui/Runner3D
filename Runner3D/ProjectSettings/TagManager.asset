@@ -10,6 +10,7 @@ TagManager:
   - CollectedObj
   - CollectableList
   - Obstacle
+  - FinishLine
   layers:
   - Default
   - TransparentFX
